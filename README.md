@@ -6,6 +6,15 @@ A collection of MIDI filter, generator and processor plugins
 ## Plugins
 
 
+### MIDI CC Map X4
+
+Map a single input CC to up to four output CCs.
+
+![MIDI CC Map X4 screenshot](screenshots/MIDICCMapX4.png)
+
+* *TBD...*
+
+
 ### MIDI CCRecorder
 
 Store received Control Change messages and replay them when triggered.

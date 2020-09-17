@@ -20,6 +20,7 @@ patch:
 	-patch -d dpf -r - -p1 -N -i ../patches/dpf/fix-lv2-version-export.patch
 
 plugins: libs
+	$(MAKE) all -C plugins/MIDICCMapX4
 	$(MAKE) all -C plugins/MIDICCRecorder
 	$(MAKE) all -C plugins/MIDIPBToCC
 	$(MAKE) all -C plugins/MIDISysFilter
@@ -44,17 +45,20 @@ endif
 
 clean:
 	$(MAKE) clean -C dpf/utils/lv2-ttl-generator
+	$(MAKE) clean -C plugins/MIDICCMapX4
 	$(MAKE) clean -C plugins/MIDICCRecorder
 	$(MAKE) clean -C plugins/MIDIPBToCC
 	$(MAKE) clean -C plugins/MIDISysFilter
 	rm -rf bin build
 
 install: all
+	$(MAKE) install -C plugins/MIDICCMapX4
 	$(MAKE) install -C plugins/MIDICCRecorder
 	$(MAKE) install -C plugins/MIDIPBToCC
 	$(MAKE) install -C plugins/MIDISysFilter
 
 install-user: all
+	$(MAKE) install-user -C plugins/MIDICCMapX4
 	$(MAKE) install-user -C plugins/MIDICCRecorder
 	$(MAKE) install-user -C plugins/MIDIPBToCC
 	$(MAKE) install-user -C plugins/MIDISysFilter
